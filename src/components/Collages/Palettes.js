@@ -12,7 +12,7 @@ const Palettes = () => {
     const [status, setStatus] = useState("loading");
   
     useEffect(() => {
-        fetch("/api/palettes")
+        fetch("https://mighty-cove-55317.herokuapp.com/api/palettes")
           .then((res) => res.json())
           .then((data) => {
             setPalettes(data.data);

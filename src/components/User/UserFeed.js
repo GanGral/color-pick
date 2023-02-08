@@ -14,7 +14,7 @@ const UserFeed = ({savedPalettes}) => {
    
     
     useEffect(() =>{
-        fetch(`/api/fetch-my-palettes/${id.userID}`, {
+        fetch(`https://mighty-cove-55317.herokuapp.com/api/fetch-my-palettes/${id.userID}`, {
             headers: { "Content-Type": "application/json" },
         })
         .then((res) => res.json())

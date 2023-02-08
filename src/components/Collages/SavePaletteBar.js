@@ -16,7 +16,7 @@ const SavePaletteBar = ({num,paletteId}) => {
         setIsLiked(!isLiked);
         setLikeNum(likeNum+1);
         if (currentUser) {
-            fetch("api/like-palette", {
+            fetch("https://mighty-cove-55317.herokuapp.com/api/like-palette", {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({_id:paletteId, currentUser:currentUser._id, isLiked})

@@ -49,7 +49,7 @@ const PaletteFromPicture = () => {
         reader.onload = function () {
             ImageBase64 = reader.result;
             let image = {ImageBase64};
-              fetch("/api/color-recognize", {
+              fetch("https://mighty-cove-55317.herokuapp.com/api/color-recognize", {
                   method: "POST",
                   headers: {
                  "Content-Type": "application/json",},
@@ -100,7 +100,7 @@ const PaletteFromPicture = () => {
         const _id = uuidv4()
         const isLikedBy = currentUserId;
         console.log(pale,isLikedBy);
-        fetch("/api/save-palette-from-picture", {
+        fetch("https://mighty-cove-55317.herokuapp.com/api/save-palette-from-picture", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({_id:_id, palette:pale, isLikedBy})

@@ -15,7 +15,7 @@ export const UsersContext = createContext(null);
             const addUserToMongo = async () => {
             
               if (isAuthenticated) {
-                  await fetch("/api/user/create-user", {
+                  await fetch("https://mighty-cove-55317.herokuapp.com/api/user/create-user", {
                     method: "POST", 
                     headers: {"Content-Type": "application/json",},
                     body: JSON.stringify({
@@ -38,7 +38,7 @@ export const UsersContext = createContext(null);
           const savePalette = () => {
             setIsSaved(!isSaved);
             if (currentUser) {
-            fetch("/api/save-palette", {
+            fetch("https://mighty-cove-55317.herokuapp.com/api/save-palette", {
                 method: "PATCH",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({_id:colors._id, currentPalette, currentUser, isSaved})
